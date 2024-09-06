@@ -1,0 +1,41 @@
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Maven
+target/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Gradle
+.gradle/
+build/
+
+# Local configuration files
+application-local.properties
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Bytecode tool artifacts
+*.pyc
+__pycache__/
+
+# Node.js modules (if you're not using Node.js in your Java backend, this can be removed)
+node_modules/
