@@ -1,0 +1,72 @@
+package ${package.Service};
+
+import java.util.List;
+import java.util.ArrayList;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.moowu.common.core.service.BaseService;
+import org.springframework.stereotype.Service;
+import ${package.Entity}.${entity};;
+import ${package.ServiceImpl}.${table.serviceImplName};
+import com.moowu.common.core.page.TableDataInfo;
+
+
+/**
+ * <p>
+ * $!{table.comment} 服务类
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@Service
+public class ${table.serviceName}  extends BaseService {
+
+
+    #set( $originalServiceImplName = ${table.serviceImplName})
+    #set( $lowerFirstCharServiceImplName = $originalServiceImplName.substring(0,1).toLowerCase() + $originalServiceImplName.substring(1))
+    #set( $originalEntity = ${entity})
+    #set( $lowerFirstCharEntity = $originalEntity.substring(0,1).toLowerCase() + $originalEntity.substring(1))
+
+    @Autowired
+    private ${originalServiceImplName} $lowerFirstCharServiceImplName;
+
+    /**
+     * 查询列表
+     */
+    public TableDataInfo list(${originalEntity} ${lowerFirstCharEntity}){
+            startPage();
+            List<${originalEntity}> list = new ArrayList();
+            return getDataTable(list);
+    }
+
+
+    /**
+     * 获取详细信息
+     */
+    public ${originalEntity} select${originalEntity}ById(Integer id){
+            return ${lowerFirstCharEntity}Dao.getById(id);
+    }
+
+    /**
+     * 新增
+     */
+    public boolean insert${originalEntity}(${originalEntity} ${lowerFirstCharEntity}){
+            return ${lowerFirstCharEntity}Dao.save(${lowerFirstCharEntity});
+    }
+
+    /**
+     * 修改
+     */
+    public boolean update${originalEntity}(${originalEntity} ${lowerFirstCharEntity}){
+            return ${lowerFirstCharEntity}Dao.updateById(${lowerFirstCharEntity});
+    }
+
+    /**
+     * 删除
+     */
+    public boolean delete${originalEntity}ByIds(List<Integer> ids){
+         return ${lowerFirstCharEntity}Dao.removeByIds(ids);
+    }
+
+
+}
