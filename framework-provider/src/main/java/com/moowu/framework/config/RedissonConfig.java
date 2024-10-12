@@ -1,4 +1,4 @@
-//package com.moomu.framework.config;
+//package com.moowu.framework.config;
 //
 //import com.moowu.common.util.StringUtils;
 //import org.redisson.Redisson;
