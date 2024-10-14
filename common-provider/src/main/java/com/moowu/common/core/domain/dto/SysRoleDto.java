@@ -1,4 +1,4 @@
-package com.moowu.common.core.domain.entity;
+package com.moowu.common.core.domain.dto;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -17,7 +17,7 @@ import java.util.Set;
  * 角色表 sys_role
  */
 @TableName("sys_role")
-public class SysRole extends BaseEntity
+public class SysRoleDto extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
@@ -71,12 +71,12 @@ public class SysRole extends BaseEntity
     @TableField(exist = false)
     private Set<String> permissions;
 
-    public SysRole()
+    public SysRoleDto()
     {
 
     }
 
-    public SysRole(Long roleId)
+    public SysRoleDto(Long roleId)
     {
         this.roleId = roleId;
     }

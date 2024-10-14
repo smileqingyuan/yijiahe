@@ -1,7 +1,7 @@
 package com.moowu.common.core.domain.model;
 
 import com.alibaba.fastjson2.annotation.JSONField;
-import com.moowu.common.core.domain.entity.SysUser;
+import com.moowu.common.core.domain.dto.SysUserDto;
 import com.moowu.common.util.ip.AddressUtils;
 import com.moowu.common.util.ip.IpUtils;
 import eu.bitwalker.useragentutils.UserAgent;
@@ -71,12 +71,13 @@ public class LoginUser implements UserDetails {
     /**
      * 用户信息
      */
-    private SysUser user;
+    private SysUserDto userDto;
 
-    public LoginUser(Long userId, Long deptId, SysUser user, UserAgent userAgent) {
+
+    public LoginUser(Long userId, Long deptId, SysUserDto userDto, UserAgent userAgent) {
         this.userId = userId;
         this.deptId = deptId;
-        this.user = user;
+        this.userDto = userDto;
         String ip = IpUtils.getIpAddr();
         this.ipaddr = ip;
         this.loginLocation = AddressUtils.getRealAddressByIP(ip);
@@ -114,27 +115,27 @@ public class LoginUser implements UserDetails {
     public LoginUser() {
     }
 
-    public LoginUser(SysUser user, Set<String> permissions) {
-        this.user = user;
+    public LoginUser(SysUserDto userDto, Set<String> permissions) {
+        this.userDto = userDto;
         this.permissions = permissions;
     }
 
-    public LoginUser(Long userId, Long deptId, SysUser user, Set<String> permissions) {
+    public LoginUser(Long userId, Long deptId, SysUserDto userDto, Set<String> permissions) {
         this.userId = userId;
         this.deptId = deptId;
-        this.user = user;
+        this.userDto = userDto;
         this.permissions = permissions;
     }
 
     @JSONField(serialize = false)
     @Override
     public String getPassword() {
-        return user.getPassword();
+        return userDto.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return user.getUserName();
+        return userDto.getUserName();
     }
 
     /**
@@ -235,12 +236,12 @@ public class LoginUser implements UserDetails {
         this.permissions = permissions;
     }
 
-    public SysUser getUser() {
-        return user;
+    public SysUserDto getUserDto() {
+        return userDto;
     }
 
-    public void setUser(SysUser user) {
-        this.user = user;
+    public void setUserDto(SysUserDto userDto) {
+        this.userDto = userDto;
     }
 
     @Override

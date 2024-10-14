@@ -1,4 +1,4 @@
-package com.moowu.common.core.domain.entity;
+package com.moowu.common.core.domain.dto;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
  * 字典类型表 sys_dict_type
  */
 @TableName("sys_dict_type")
-public class SysDictType extends BaseEntity
+public class SysDictTypeDto extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 

@@ -1,8 +1,8 @@
 package com.moowu.common.core.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.moowu.common.core.domain.entity.SysDept;
-import com.moowu.common.core.domain.entity.SysMenu;
+import com.moowu.common.core.domain.dto.SysDeptDto;
+import com.moowu.common.core.domain.dto.SysMenuDto;
 
 import java.io.Serializable;
 import java.util.List;
@@ -34,13 +34,13 @@ public class TreeSelect implements Serializable {
 
     }
 
-    public TreeSelect(SysDept dept) {
+    public TreeSelect(SysDeptDto dept) {
         this.id = dept.getDeptId();
         this.label = dept.getDeptName();
         this.children = dept.getChildren().stream().map(TreeSelect::new).collect(Collectors.toList());
     }
 
-    public TreeSelect(SysMenu menu) {
+    public TreeSelect(SysMenuDto menu) {
         this.id = menu.getMenuId();
         this.label = menu.getMenuName();
         this.children = menu.getChildren().stream().map(TreeSelect::new).collect(Collectors.toList());

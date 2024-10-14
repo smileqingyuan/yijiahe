@@ -1,4 +1,4 @@
-package com.moowu.common.core.domain.entity;
+package com.moowu.common.core.domain.dto;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 菜单权限表 sys_menuß
+ * 菜单权限表 sys_menu
  */
 @TableName("sys_menu")
-public class SysMenu extends BaseEntity {
+public class SysMenuDto extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -101,7 +101,7 @@ public class SysMenu extends BaseEntity {
      * 子菜单
      */
     @TableField(exist = false)
-    private List<SysMenu> children = new ArrayList<SysMenu>();
+    private List<SysMenuDto> children = new ArrayList<SysMenuDto>();
 
     public Long getMenuId() {
         return menuId;
@@ -230,11 +230,11 @@ public class SysMenu extends BaseEntity {
         this.icon = icon;
     }
 
-    public List<SysMenu> getChildren() {
+    public List<SysMenuDto> getChildren() {
         return children;
     }
 
-    public void setChildren(List<SysMenu> children) {
+    public void setChildren(List<SysMenuDto> children) {
         this.children = children;
     }
 

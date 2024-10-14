@@ -9,6 +9,8 @@ import com.moowu.common.core.redis.RedisCache;
 import com.moowu.common.util.sign.Base64;
 import com.moowu.common.util.uuid.IdUtils;
 import com.moowu.system.service.SysConfigService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.FastByteArrayOutputStream;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +26,7 @@ import java.util.concurrent.TimeUnit;
  * 验证码操作处理
  */
 @RestController
+@Tag(name = "基础功能")
 public class CaptchaController {
 
     @Resource(name = "captchaProducer")
@@ -42,6 +45,7 @@ public class CaptchaController {
      * 生成验证码
      */
     @GetMapping("/captchaImage")
+    @Operation(summary = "请求验证码")
     public AjaxResult getCode()  {
         AjaxResult ajax = AjaxResult.success();
         boolean captchaEnabled = configService.selectCaptchaEnabled();

@@ -1,11 +1,10 @@
-package com.moowu.common.core.domain.entity;
+package com.moowu.common.core.domain.dto;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.moowu.common.annotation.Excel;
 import com.moowu.common.constant.UserConstants;
 import com.moowu.common.core.domain.BaseEntity;
-import lombok.Data;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -16,7 +15,7 @@ import javax.validation.constraints.Size;
  * 字典数据表 sys_dict_data
  */
 @TableName("sys_dict_data")
-public class SysDictData extends BaseEntity
+public class SysDictDataDto extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 

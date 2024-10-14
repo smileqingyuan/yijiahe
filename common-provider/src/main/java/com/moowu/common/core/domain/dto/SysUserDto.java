@@ -1,4 +1,4 @@
-package com.moowu.common.core.domain.entity;
+package com.moowu.common.core.domain.dto;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -20,7 +20,7 @@ import java.util.List;
  * 用户对象 sys_user
  */
 @TableName("sys_user")
-public class SysUser extends BaseEntity
+public class SysUserDto extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
 
@@ -80,11 +80,11 @@ public class SysUser extends BaseEntity
         @Excel(name = "部门负责人", targetAttr = "leader", type = Excel.Type.EXPORT)
     })
     @TableField(exist = false)
-    private SysDept dept;
+    private SysDeptDto dept;
 
     /** 角色对象 */
     @TableField(exist = false)
-    private List<SysRole> roles;
+    private List<SysRoleDto> roles;
 
     /** 角色组 */
     @TableField(exist = false)
@@ -98,12 +98,12 @@ public class SysUser extends BaseEntity
     @TableField(exist = false)
     private Long roleId;
 
-    public SysUser()
+    public SysUserDto()
     {
 
     }
 
-    public SysUser(Long userId)
+    public SysUserDto(Long userId)
     {
         this.userId = userId;
     }
@@ -256,22 +256,22 @@ public class SysUser extends BaseEntity
         this.loginDate = loginDate;
     }
 
-    public SysDept getDept()
+    public SysDeptDto getDept()
     {
         return dept;
     }
 
-    public void setDept(SysDept dept)
+    public void setDept(SysDeptDto dept)
     {
         this.dept = dept;
     }
 
-    public List<SysRole> getRoles()
+    public List<SysRoleDto> getRoles()
     {
         return roles;
     }
 
-    public void setRoles(List<SysRole> roles)
+    public void setRoles(List<SysRoleDto> roles)
     {
         this.roles = roles;
     }

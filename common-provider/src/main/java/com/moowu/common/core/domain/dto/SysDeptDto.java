@@ -1,4 +1,4 @@
-package com.moowu.common.core.domain.entity;
+package com.moowu.common.core.domain.dto;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -18,7 +18,7 @@ import java.util.List;
  * 部门表 sys_dept
  */
 @TableName("sys_dept")
-public class SysDept extends BaseEntity {
+public class SysDeptDto extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -82,7 +82,7 @@ public class SysDept extends BaseEntity {
      * 子部门
      */
     @TableField(exist = false)
-    private List<SysDept> children = new ArrayList<SysDept>();
+    private List<SysDeptDto> children = new ArrayList<SysDeptDto>();
 
     public Long getDeptId() {
         return deptId;
@@ -178,11 +178,11 @@ public class SysDept extends BaseEntity {
         this.parentName = parentName;
     }
 
-    public List<SysDept> getChildren() {
+    public List<SysDeptDto> getChildren() {
         return children;
     }
 
-    public void setChildren(List<SysDept> children) {
+    public void setChildren(List<SysDeptDto> children) {
         this.children = children;
     }
 

@@ -26,6 +26,10 @@ moowu:
 
 # database 数据库
 spring:
+  # 资源信息
+  messages:
+    # 国际化资源文件路径
+    basename: i18n/messages
   # redis 配置
   redis:
     # 地址
@@ -127,3 +131,12 @@ logging:
   level:
     com.moowu: debug
     org.springframework: debug
+
+
+# 用户配置
+user:
+  password:
+    # 密码最大错误次数
+    maxRetryCount: 5
+    # 密码锁定时间（默认10分钟）
+    lockTime: 10

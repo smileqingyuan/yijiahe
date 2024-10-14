@@ -32,11 +32,15 @@
             <artifactId>oshi-core</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
 
         <dependency>
             <groupId>com.moowu</groupId>
             <artifactId>system-provider</artifactId>
-            <version>0.0.1</version>
         </dependency>
 
     </dependencies>
